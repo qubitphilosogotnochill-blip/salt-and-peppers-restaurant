@@ -30,7 +30,7 @@ export default function SaltAndPeppersLogo({
           alt="Salt and Peppers Restaurant Logo"
           width={size}
           height={size}
-          priority
+          loading="eager"
           className="w-full h-full object-contain"
         />
       </div>

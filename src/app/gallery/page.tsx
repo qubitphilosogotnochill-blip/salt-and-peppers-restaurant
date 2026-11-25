@@ -36,7 +36,7 @@ export default function GalleryPage() {
             Step inside Salt and Peppers. A photographic journey showcasing our warm rustic interiors, ambient lighting, and signature vegetarian dishes in Najafgarh, New Delhi.
           </p>
 
-          <div className="mt-6 flex items-center justify-center gap-3 text-xs text-[#B58A50]">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs text-[#B58A50]">
             <span className="flex items-center gap-1">
               <Camera className="w-3.5 h-3.5" /> Authentic Restaurant Photos
             </span>

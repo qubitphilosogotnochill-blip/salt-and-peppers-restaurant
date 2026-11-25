@@ -122,12 +122,12 @@ export default function LocationSection() {
           </div>
 
           {/* Right Column: Google Maps Interactive Embed Container */}
-          <div className="lg:col-span-7 flex flex-col justify-between bg-white rounded-3xl p-3 sm:p-4 border-2 border-[#B58A50]/35 shadow-xl relative min-h-[420px] sm:min-h-[500px]">
+          <div className="lg:col-span-7 flex flex-col justify-between bg-white rounded-3xl p-3 sm:p-4 border-2 border-[#B58A50]/35 shadow-xl relative min-h-[340px] sm:min-h-[460px] lg:min-h-[500px]">
             {/* Top Bar for Map */}
-            <div className="flex items-center justify-between px-3 py-2 border-b border-[#E7DCCB] mb-2">
-              <div className="flex items-center gap-2">
-                <span className="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
-                <span className="text-xs font-semibold text-[#243D32]">
+            <div className="flex items-center justify-between gap-2 px-2 sm:px-3 py-2 border-b border-[#E7DCCB] mb-2">
+              <div className="flex items-center gap-2 min-w-0">
+                <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-500 inline-block shrink-0"></span>
+                <span className="text-[11px] sm:text-xs font-semibold text-[#243D32] truncate">
                   Live Location: Najafgarh Thana Road
                 </span>
               </div>
@@ -135,7 +135,7 @@ export default function LocationSection() {
                 href={RESTAURANT_DATA.maps.directionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-[#A6533C] hover:underline font-medium inline-flex items-center gap-1"
+                className="text-[11px] sm:text-xs text-[#A6533C] hover:underline font-medium inline-flex items-center gap-1 shrink-0"
               >
                 Open in App
                 <Navigation className="w-3 h-3" />
@@ -149,16 +149,16 @@ export default function LocationSection() {
                 src={RESTAURANT_DATA.maps.embedUrl}
                 width="100%"
                 height="100%"
-                style={{ border: 0, minHeight: "360px" }}
+                style={{ border: 0 }}
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full min-h-[380px]"
+                className="w-full h-full min-h-[280px] sm:min-h-[380px] lg:min-h-[440px]"
               />
 
               {/* Floating Map Badge */}
-              <div className="absolute bottom-3 left-3 bg-[#243D32]/95 text-white text-xs px-3.5 py-2 rounded-xl backdrop-blur-sm border border-[#B58A50]/40 shadow-lg pointer-events-none flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#B58A50]" />
+              <div className="absolute bottom-3 left-3 max-w-[calc(100%-24px)] bg-[#243D32]/95 text-white text-[11px] sm:text-xs px-3 sm:px-3.5 py-2 rounded-xl backdrop-blur-sm border border-[#B58A50]/40 shadow-lg pointer-events-none flex items-center gap-2 truncate">
+                <MapPin className="w-3.5 h-3.5 text-[#B58A50] shrink-0" />
                 <span className="font-semibold">SALT AND PEPPERS</span>
                 <span className="text-[#B58A50]">| Najafgarh</span>
               </div>

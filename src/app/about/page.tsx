@@ -37,7 +37,7 @@ export default function AboutPage() {
             More than just a meal — a gathering place in Najafgarh, New Delhi dedicated to authentic pure vegetarian flavours, warm hospitality, and memorable family moments.
           </p>
 
-          <div className="mt-6 flex items-center justify-center gap-4 text-xs text-[#B58A50]">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs text-[#B58A50]">
             <span>🌿 100% Pure Vegetarian</span>
             <span>•</span>
             <span>Family Bistro Dining</span>

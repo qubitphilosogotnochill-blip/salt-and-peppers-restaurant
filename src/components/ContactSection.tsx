@@ -250,7 +250,7 @@ export default function ContactSection() {
                     type="date"
                     value={formData.date}
                     onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#243D32] border border-[#B58A50]/30 text-white focus:outline-none focus:ring-2 focus:ring-[#B58A50] text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-[#243D32] border border-[#B58A50]/30 text-white focus:outline-none focus:ring-2 focus:ring-[#B58A50] text-sm [color-scheme:dark]"
                   />
                 </div>
 
@@ -263,7 +263,7 @@ export default function ContactSection() {
                     type="time"
                     value={formData.time}
                     onChange={(e) => setFormData({ ...formData, time: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#243D32] border border-[#B58A50]/30 text-white focus:outline-none focus:ring-2 focus:ring-[#B58A50] text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-[#243D32] border border-[#B58A50]/30 text-white focus:outline-none focus:ring-2 focus:ring-[#B58A50] text-sm [color-scheme:dark]"
                   />
                 </div>
               </div>

@@ -17,7 +17,7 @@ export default function EmbossedLogo({
   const sizeClasses = {
     sm: "w-16 h-16",
     md: "w-24 h-24 sm:w-28 sm:h-28",
-    lg: "w-32 h-32 sm:w-36 sm:h-36",
+    lg: "w-24 h-24 sm:w-32 sm:h-32 lg:w-36 lg:h-36",
   };
 
   const imageSizes = {
@@ -63,7 +63,7 @@ export default function EmbossedLogo({
             alt="Salt and Peppers Restaurant Official Logo"
             width={imageSizes[size]}
             height={imageSizes[size]}
-            priority
+            loading="eager"
             className="w-full h-full object-contain filter drop-shadow-sm"
           />
         </div>

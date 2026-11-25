@@ -82,8 +82,8 @@ export default function MenuSection() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search dishes (e.g. Paneer Tikka, Dosa, Momos, Mojito...)"
-              className="w-full pl-10 pr-4 py-2.5 rounded-full bg-white/95 border border-[#B58A50]/35 text-sm focus:outline-none focus:ring-2 focus:ring-[#B58A50] placeholder-[#85876A]/60 shadow-sm transition-all"
+              placeholder="Search dishes (Paneer, Dosa, Momos, Mojito...)"
+              className="w-full pl-10 pr-14 py-2.5 rounded-full bg-white/95 border border-[#B58A50]/35 text-sm focus:outline-none focus:ring-2 focus:ring-[#B58A50] placeholder-[#85876A]/60 shadow-sm transition-all"
             />
             {searchQuery && (
               <button

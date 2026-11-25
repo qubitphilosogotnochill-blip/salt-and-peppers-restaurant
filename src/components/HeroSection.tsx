@@ -16,43 +16,43 @@ export default function HeroSection() {
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             {/* Top Logo and badges */}
             <div className="flex items-center gap-3.5 mb-4">
-              <div className="w-14 h-14 rounded-full bg-white border-2 border-[#B58A50] flex items-center justify-center p-1 shadow-lg overflow-hidden shrink-0 hover:scale-105 transition-transform">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white border-2 border-[#B58A50] flex items-center justify-center p-1 shadow-lg overflow-hidden shrink-0 hover:scale-105 transition-transform">
                 <Image
                   src="/images/logo.png"
                   alt="Salt and Peppers Restaurant Logo"
                   width={56}
                   height={56}
-                  priority
+                  preload={true}
                   className="w-full h-full object-contain"
                 />
               </div>
               <div className="flex flex-col">
-                <span className="font-serif font-extrabold text-base tracking-widest text-[#F5F0E7] uppercase">
+                <span className="font-serif font-extrabold text-sm sm:text-base tracking-widest text-[#F5F0E7] uppercase">
                   SALT AND PEPPERS
                 </span>
-                <span className="text-[11px] tracking-widest text-[#B58A50] uppercase font-semibold">
+                <span className="text-[10px] sm:text-[11px] tracking-widest text-[#B58A50] uppercase font-semibold">
                   Najafgarh, New Delhi • Pure Veg
                 </span>
               </div>
             </div>
 
             <div className="flex flex-wrap items-center gap-2 mb-6">
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#192b23] text-emerald-400 border border-emerald-500/30 shadow-sm">
+              <span className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#192b23] text-emerald-400 border border-emerald-500/30 shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 100% Pure Vegetarian
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium bg-[#192b23] text-[#B58A50] border border-[#B58A50]/30 shadow-sm">
+              <span className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-medium bg-[#192b23] text-[#B58A50] border border-[#B58A50]/30 shadow-sm">
                 <MapPin className="w-3 h-3 text-[#B58A50]" />
                 Najafgarh, New Delhi
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-[#A6533C]/20 text-[#E7DCCB] border border-[#A6533C]/30 hidden sm:inline-flex">
+              <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-[#A6533C]/20 text-[#E7DCCB] border border-[#A6533C]/30">
                 <Sparkles className="w-3 h-3 text-[#d4a96a]" />
                 Family Restaurant & Bistro
               </span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-[#F5F0E7]">
+            <h1 className="font-serif text-[2.15rem] sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-[#F5F0E7]">
               GOOD FOOD. <br />
               <span className="gold-gradient-text">GREAT MOOD.</span>
             </h1>
@@ -89,28 +89,28 @@ export default function HeroSection() {
             </div>
 
             {/* Quick Micro-stats / Features */}
-            <div className="mt-10 pt-8 border-t border-[#B58A50]/20 w-full grid grid-cols-3 gap-4 text-left">
+            <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-[#B58A50]/20 w-full grid grid-cols-3 gap-3 sm:gap-4 text-left">
               <div>
-                <span className="font-serif text-2xl sm:text-3xl font-bold text-[#d4a96a] block">
+                <span className="font-serif text-xl sm:text-2xl lg:text-3xl font-bold text-[#d4a96a] block">
                   150+
                 </span>
-                <span className="text-xs text-[#E7DCCB]/70 tracking-wide">
+                <span className="text-[11px] sm:text-xs text-[#E7DCCB]/70 tracking-wide block">
                   Pure Veg Dishes
                 </span>
               </div>
               <div>
-                <span className="font-serif text-2xl sm:text-3xl font-bold text-[#d4a96a] block">
+                <span className="font-serif text-xl sm:text-2xl lg:text-3xl font-bold text-[#d4a96a] block">
                   10+
                 </span>
-                <span className="text-xs text-[#E7DCCB]/70 tracking-wide">
+                <span className="text-[11px] sm:text-xs text-[#E7DCCB]/70 tracking-wide block">
                   Cuisine Categories
                 </span>
               </div>
               <div>
-                <span className="font-serif text-2xl sm:text-3xl font-bold text-[#d4a96a] block">
+                <span className="font-serif text-xl sm:text-2xl lg:text-3xl font-bold text-[#d4a96a] block">
                   100%
                 </span>
-                <span className="text-xs text-[#E7DCCB]/70 tracking-wide">
+                <span className="text-[11px] sm:text-xs text-[#E7DCCB]/70 tracking-wide block">
                   Family Friendly
                 </span>
               </div>
@@ -118,7 +118,7 @@ export default function HeroSection() {
           </div>
 
           {/* Right Visual Column — Actual Restaurant Photos */}
-          <div className="lg:col-span-5 relative">
+          <div className="lg:col-span-5 relative mt-6 sm:mt-8 lg:mt-0">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               {/* Primary Image: Restaurant Dining & Bar */}
               <div className="relative rounded-3xl overflow-hidden border-2 border-[#B58A50]/40 shadow-2xl shadow-black/40 bg-[#192b23]">
@@ -127,8 +127,8 @@ export default function HeroSection() {
                   alt="Salt and Peppers Restaurant Dining Area with Bar and Ambient Plates"
                   width={600}
                   height={450}
-                  priority
-                  className="w-full h-[320px] sm:h-[380px] object-cover hover:scale-105 transition-transform duration-700"
+                  preload={true}
+                  className="w-full h-[270px] sm:h-[360px] lg:h-[380px] object-cover hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-4 left-4 right-4 text-white">
@@ -142,13 +142,13 @@ export default function HeroSection() {
               </div>
 
               {/* Overlapping Floating Secondary Image: Signature Chaap Platter */}
-              <div className="absolute -bottom-8 -left-6 sm:-left-10 w-44 sm:w-56 rounded-2xl overflow-hidden border-2 border-[#B58A50] shadow-2xl bg-[#192b23] hidden sm:block hover:-translate-y-1 transition-transform">
+              <div className="absolute -bottom-6 -left-3 sm:-bottom-8 sm:-left-6 lg:-left-10 w-44 sm:w-52 lg:w-56 rounded-2xl overflow-hidden border-2 border-[#B58A50] shadow-2xl bg-[#192b23] hidden sm:block hover:-translate-y-1 transition-transform">
                 <Image
                   src="/images/restaurant/salt-peppers-signature-chaap-platter.jpg"
                   alt="Signature Tandoori Chaap Platter at Salt and Peppers"
                   width={300}
                   height={200}
-                  className="w-full h-28 sm:h-36 object-cover"
+                  className="w-full h-28 sm:h-32 lg:h-36 object-cover"
                 />
                 <div className="p-2.5 bg-[#192b23] text-left">
                   <span className="text-[10px] text-[#B58A50] uppercase font-bold tracking-wider block">
@@ -161,8 +161,8 @@ export default function HeroSection() {
               </div>
 
               {/* Floating Pure Veg Seal Badge with Official Logo */}
-              <div className="absolute -top-5 -right-4 sm:-right-6 bg-gradient-to-br from-[#192b23] to-[#243D32] border-2 border-[#B58A50]/60 rounded-2xl p-2.5 sm:p-3 shadow-2xl flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-white border border-[#B58A50] overflow-hidden p-0.5 shrink-0 shadow-sm">
+              <div className="absolute top-3 right-3 sm:-top-5 sm:-right-4 lg:-right-6 bg-gradient-to-br from-[#192b23] to-[#243D32] border-2 border-[#B58A50]/60 rounded-2xl p-2 sm:p-3 shadow-2xl flex items-center gap-2.5 sm:gap-3">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border border-[#B58A50] overflow-hidden p-0.5 shrink-0 shadow-sm">
                   <Image
                     src="/images/logo.png"
                     alt="Salt and Peppers Seal Logo"
@@ -172,10 +172,10 @@ export default function HeroSection() {
                   />
                 </div>
                 <div className="text-left">
-                  <span className="text-[10px] uppercase tracking-wider text-emerald-400 font-bold block">
+                  <span className="text-[9px] sm:text-[10px] uppercase tracking-wider text-emerald-400 font-bold block">
                     Shuddh Shakahari
                   </span>
-                  <span className="text-xs font-bold text-white">
+                  <span className="text-[11px] sm:text-xs font-bold text-white whitespace-nowrap">
                     100% Pure Veg
                   </span>
                 </div>

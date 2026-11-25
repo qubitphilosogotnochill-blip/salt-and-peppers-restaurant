@@ -20,7 +20,7 @@ export default function AboutSection() {
                   alt="Salt and Peppers Restaurant Ambiance with Warm Basket Lights and Wall Art"
                   width={600}
                   height={800}
-                  className="w-full h-[400px] sm:h-[480px] object-cover hover:scale-105 transition-transform duration-700"
+                  className="w-full h-[300px] sm:h-[420px] lg:h-[480px] object-cover hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-5 left-5 right-5 text-white">
@@ -37,9 +37,9 @@ export default function AboutSection() {
               <div className="absolute -bottom-4 -right-4 -z-10 w-full h-full border-2 border-[#A6533C]/40 rounded-3xl hidden sm:block" />
 
               {/* Floating Highlight Card with Official Logo */}
-              <div className="absolute -top-6 -left-4 sm:-left-8 bg-[#243D32] text-white p-3.5 sm:p-4 rounded-2xl border-2 border-[#B58A50]/50 shadow-xl max-w-xs">
-                <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-full bg-white border border-[#B58A50] flex items-center justify-center p-0.5 shrink-0 overflow-hidden shadow-sm">
+              <div className="absolute top-3 left-3 sm:-top-6 sm:-left-6 bg-[#243D32] text-white p-2.5 sm:p-4 rounded-2xl border-2 border-[#B58A50]/50 shadow-xl max-w-[220px] sm:max-w-xs">
+                <div className="flex items-center gap-2.5 sm:gap-3">
+                  <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#B58A50] flex items-center justify-center p-0.5 shrink-0 overflow-hidden shadow-sm">
                     <Image
                       src="/images/logo.png"
                       alt="Salt and Peppers Logo"
@@ -49,10 +49,10 @@ export default function AboutSection() {
                     />
                   </div>
                   <div>
-                    <span className="font-serif text-base font-bold text-[#F5F0E7] block">
+                    <span className="font-serif text-sm sm:text-base font-bold text-[#F5F0E7] block">
                       100% Pure Veg
                     </span>
-                    <span className="text-xs text-[#E7DCCB]/80">
+                    <span className="text-[10px] sm:text-xs text-[#E7DCCB]/80 block leading-snug">
                       Hygiene & Authentic Flavours
                     </span>
                   </div>
