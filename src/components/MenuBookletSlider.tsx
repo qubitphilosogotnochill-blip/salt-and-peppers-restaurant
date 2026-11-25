@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback, useSyncExternalStore } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ChevronLeft,
@@ -9,12 +10,12 @@ import {
   Maximize2,
   ZoomIn,
   ZoomOut,
-  BookOpen,
   Columns,
   Square,
   Sparkles,
   X,
   List,
+  LogOut,
 } from "lucide-react";
 import { RESTAURANT_DATA } from "@/data/restaurantData";
 import EmbossedLogo from "@/components/EmbossedLogo";
@@ -22,6 +23,7 @@ import EmbossedLogo from "@/components/EmbossedLogo";
 interface MenuBookletSliderProps {
   initialSpreadIndex?: number;
   showEmbossedLogo?: boolean;
+  exitHref?: string;
 }
 
 const MOBILE_MEDIA_QUERY = "(max-width: 767px)";
@@ -43,6 +45,7 @@ function getIsMobileServerSnapshot() {
 export default function MenuBookletSlider({
   initialSpreadIndex = 0,
   showEmbossedLogo = true,
+  exitHref,
 }: MenuBookletSliderProps) {
   // Automatically adapt default mode: 1-Page focused reader on phones (<768px), 2-Page open book spread on tabs & laptops
   const isMobileViewport = useSyncExternalStore(
@@ -342,6 +345,35 @@ export default function MenuBookletSlider({
               <Maximize2 className="w-4 h-4" />
               <span className="hidden md:inline">Fullscreen</span>
             </motion.button>
+
+            {/* Exit Menu Button (when on /menu page or zoomed/HD text active) */}
+            {(exitHref || viewMode === "details" || zoomLevel > 1) && (
+              exitHref && viewMode === "scan4k" && zoomLevel === 1 ? (
+                <Link
+                  href={exitHref}
+                  className="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg bg-[#A6533C] hover:bg-[#ba644c] text-white border border-[#B58A50]/40 transition-all text-xs font-semibold flex items-center gap-1.5 shadow-sm"
+                  title="Exit Menu"
+                  aria-label="Exit Menu"
+                >
+                  <LogOut className="w-3.5 h-3.5" />
+                  <span>Exit</span>
+                </Link>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (viewMode === "details") setViewMode("scan4k");
+                    if (zoomLevel > 1) setZoomLevel(1);
+                  }}
+                  className="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg bg-[#A6533C] hover:bg-[#ba644c] text-white border border-[#B58A50]/40 transition-all text-xs font-semibold flex items-center gap-1.5 shadow-sm"
+                  title={viewMode === "details" ? "Exit HD Text View" : "Exit Zoom"}
+                  aria-label="Exit Current Menu Mode"
+                >
+                  <X className="w-3.5 h-3.5" />
+                  <span>Exit</span>
+                </button>
+              )
+            )}
           </div>
         </div>
 
@@ -503,10 +535,10 @@ export default function MenuBookletSlider({
                   </div>
                   <button
                     onClick={() => setViewMode("scan4k")}
-                    className="self-start sm:self-auto px-3.5 py-1.5 rounded-xl bg-[#B58A50] text-[#192b23] text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 shrink-0"
+                    className="self-start sm:self-auto px-3.5 py-1.5 rounded-xl bg-[#A6533C] hover:bg-[#ba644c] text-white text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 shrink-0 transition-colors"
                   >
-                    <BookOpen className="w-4 h-4" />
-                    <span>View Scans</span>
+                    <X className="w-4 h-4" />
+                    <span>Exit Text View</span>
                   </button>
                 </div>
 
@@ -746,16 +778,17 @@ export default function MenuBookletSlider({
                   </div>
                 </div>
 
-                {/* Close button on mobile top-right */}
+                {/* Exit button on mobile top-right */}
                 <button
                   onClick={() => {
                     setIsFullscreen(false);
                     setZoomLevel(1);
                   }}
-                  className="sm:hidden p-2 rounded-xl bg-white/15 hover:bg-[#A6533C] text-white transition-colors shrink-0"
-                  aria-label="Close Fullscreen"
+                  className="sm:hidden px-3 py-1.5 rounded-xl bg-[#A6533C] hover:bg-[#ba644c] text-white text-xs font-bold flex items-center gap-1 transition-colors shrink-0 shadow-md"
+                  aria-label="Exit Fullscreen Menu"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-4 h-4" />
+                  <span>Exit</span>
                 </button>
               </div>
 
@@ -797,11 +830,12 @@ export default function MenuBookletSlider({
                     setIsFullscreen(false);
                     setZoomLevel(1);
                   }}
-                  className="hidden sm:inline-flex p-2 rounded-xl bg-white/15 hover:bg-[#A6533C] text-white transition-colors"
-                  title="Close Fullscreen (Esc)"
-                  aria-label="Close Fullscreen"
+                  className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#A6533C] hover:bg-[#ba644c] text-white text-xs font-bold tracking-wide transition-colors shadow-md"
+                  title="Exit Fullscreen (Esc)"
+                  aria-label="Exit Fullscreen Menu"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-4 h-4" />
+                  <span>Exit Menu</span>
                 </button>
               </div>
             </div>
@@ -902,6 +936,17 @@ export default function MenuBookletSlider({
                   className="flex-1 sm:flex-initial px-3 py-2 sm:py-1.5 rounded-lg bg-[#B58A50] hover:bg-[#d4a96a] text-[#192b23] font-bold"
                 >
                   {layoutMode === "twoPage" ? "Next Spread" : "Next Page"}
+                </button>
+                <button
+                  onClick={() => {
+                    setIsFullscreen(false);
+                    setZoomLevel(1);
+                  }}
+                  className="px-3.5 py-2 sm:py-1.5 rounded-lg bg-[#A6533C] hover:bg-[#ba644c] text-white font-bold flex items-center justify-center gap-1 shrink-0"
+                  aria-label="Exit Fullscreen"
+                >
+                  <X className="w-3.5 h-3.5" />
+                  <span>Exit</span>
                 </button>
               </div>
             </div>

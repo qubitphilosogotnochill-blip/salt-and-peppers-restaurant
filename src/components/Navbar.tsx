@@ -206,10 +206,11 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 rounded-full text-[#F5F0E7] hover:bg-[#192b23] hover:text-[#B58A50]"
-                  aria-label="Close menu"
+                  className="px-3 py-1.5 rounded-full bg-[#192b23] text-[#F5F0E7] hover:bg-[#A6533C] hover:text-white border border-[#B58A50]/30 text-xs font-semibold flex items-center gap-1 transition-colors"
+                  aria-label="Exit navigation menu"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-4 h-4" />
+                  <span>Exit</span>
                 </button>
               </div>
 

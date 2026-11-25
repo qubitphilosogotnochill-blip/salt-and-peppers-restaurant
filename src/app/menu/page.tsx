@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Phone, MapPin } from "lucide-react";
+import { Phone, MapPin, ArrowLeft, LogOut } from "lucide-react";
 import MenuBookletSlider from "@/components/MenuBookletSlider";
 import { RESTAURANT_DATA } from "@/data/restaurantData";
 
@@ -39,12 +39,23 @@ export default function MenuPage() {
           <p className="mt-2 text-xs sm:text-sm text-[#B58A50]">
             Browse our official 12-page restaurant menu booklet with genuine pricing below.
           </p>
+
+          <div className="mt-6 flex justify-center">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#192b23] hover:bg-[#A6533C] text-[#F5F0E7] border border-[#B58A50]/40 text-xs sm:text-sm font-semibold transition-all shadow-md"
+            >
+              <ArrowLeft className="w-4 h-4 text-[#B58A50]" />
+              <span>Exit Menu &amp; Back to Home</span>
+              <LogOut className="w-3.5 h-3.5 opacity-80" />
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Main Booklet Section */}
       <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <MenuBookletSlider />
+        <MenuBookletSlider exitHref="/" />
       </section>
 
       {/* Structured Category Overview for Technical and Local SEO */}
